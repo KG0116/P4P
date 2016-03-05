@@ -1,0 +1,21 @@
+
+extends base
+block header
+	link(rel="stylesheet" type="text/css" href="/stylesheets/home.css")
+block content
+	div(class="carousel-frame")
+		ul(class="carousel featured-games")
+			for game in games
+				li(class="gm-list-item carousel-item")
+					#[img(src="/#{game.home_image}", small-screen="/#{game.image_path}", class="game-image")]
+					div(class="game-details")
+						p(class="title") #{game.name}
+						p(class="price", id="price") #{game.price}
+						div(class="stars", score="#{avg}")
+						a(href="/games/#{game.genre}/#{game.slug}", class="buy-now") buy now
+		div(class="dots controls")
+			div(index="0")
+			div(index="1")
+			div(index="2")
+block script
+	script(src="/javascripts/minified/home.min.js")

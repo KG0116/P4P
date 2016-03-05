@@ -1,0 +1,13 @@
+extends base
+block header
+	link(rel="stylesheet" type="text/css" href="/stylesheets/login.css")
+block content
+	main
+		form(method="post", action="#", class="form")
+			div(class="input-container")
+				button(type="submit") &#9658;
+				div(class="text-input-container")
+					input(type="text", placeholder="#{messages.username}", name="username", alert="#{alert.username}")
+				div(class="text-input-container")
+					input(type="password", placeholder="#{messages.password}", name="password", alert="#{alert.password}")
+			div(class="no-account") Don't have an account? #[a(href="/register") click here]

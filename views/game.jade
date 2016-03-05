@@ -1,0 +1,51 @@
+
+extends base
+block header
+	link(rel="stylesheet" type="text/css" href="/stylesheets/game.css")
+block content
+	main
+		img(src="/#{game.image_path}", alt="", id="game-image", model-name="cart", data-type="image", data-value="/#{game.image_path}")
+		div(class="game-info")
+			p(id="name", model-name="cart review", data-type="game", data-value="#{game.name}" ) #{game.name}
+			p(id="price", model-name="cart", data-type="price", data-value="#{game.price}") #{game.price}
+			div(class="stars", score="#{avg}")
+			p(class="description small-screen-description") #{game.description}
+				a(href="#", class="close-description") close
+			a(href="#", class="open-small-screen-description") open game synopsis
+			div(class="number-selector", title="quantity")
+				div(class="decrease selector-button") -
+				div(class="number quantity", model-name="cart", data-type="quantity", data-value="1") 1
+				div(class="increase selector-button") +
+			input(type="hidden", name="genre", model-name="cart", data-type="genre", data-value="#{game.genre}")
+			br
+			button(class="add-to-cart") add to cart
+			a(href="/cart", class="added-successfully") Proceed to cart
+		hr 
+		h1 Customer Reviews
+		ul(class="reviews")
+			if game.reviews.length
+				for review in game.reviews
+					li
+						div(class="stars", score="#{review.rating}")
+						span #{review.title}
+						p By #[span(id="username") #{review.username}] on #{review.posted_on}
+						p #{review.text}
+			li(class="li-review-form") 
+				form(method='post', action='/review')
+					div(class='score', model-name="review", data-type="score" data-value="")
+					label(for='title') Title: 
+					div(class="input-container")
+						input(type="text", id='title', name="title", maxlength='100', model-name="review", data-type="title")
+					input(type="hidden", name="slug", value="#{game.slug}", model-name="cart review", data-type="slug")
+					if session.authenticated 
+						input(type="hidden", name="username", value="#{session.username}", model-name="review", data-type="username")
+					else
+						label(for="username") Name:
+						div(class="input-container")
+							input(type="text", id="username" name="username", maxlength="50", model-name="review", data-type="username")
+					label(for='review') Review:
+					div(class="textarea-container")
+						textarea(cols="", rows="", id="review" name="review", maxlength="500", model-name="review", data-type="review")
+					button(type='submit', class='submit-review') submit review
+block script
+	script(src="/javascripts/minified/game.min.js")

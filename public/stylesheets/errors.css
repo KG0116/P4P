@@ -1,0 +1,4 @@
+/* line 2, ../sass/errors.scss */
+input::-webkit-input-placeholder {
+  color: red !important;
+}

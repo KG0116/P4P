@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title P4P
+		link(rel="stylesheets" type="text/css" href="/stylesheets/jquery.raty.css")
+		link(rel="stylesheets" type="text/css" href="/stylesheets/font-awesome.css")
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,900,100,300,500,700', rel='stylesheet', type='text/css')
+		block header
+	body
+		div(class="page-wrapper")
+			header(class="site-header")
+				ul(class="header-options")
+					li(class="bag")
+						a(href="/cart")
+					li(class="brand")
+						a(href="/") P4P
+					li(class="menu")
+						div &#9776;
+			div(class="nav-container")
+				nav(class="nav")
+					ul(class="nav-list")
+						li #[a(href="/games/action/") Action]
+						li #[a(href="/games/adventure/") Adventure]
+						li #[a(href="/games/role-playing/") Role Playing]
+						li #[a(href="/games/sports/") Sports]
+						unless session.authenticated
+							li(class="login") #[a(href="/login") sign in &#47; create account]
+						else
+							li(class="logout") #[a(href="/logout") sign out]
+			block content
+		script(src="/javascripts/minified/base.min.js")
+		block script
+		footer(class="footer")
+			p &#169; 2016 P4P	

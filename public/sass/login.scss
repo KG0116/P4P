@@ -1,0 +1,134 @@
+@import 'base';
+
+.form{
+	background-color: $tuna;
+	border: solid 1px $tuna;
+  	padding: 100px 10px;
+  	width: 80%;
+  	margin: 20px auto;
+  	text-align: center;
+  	.input-container{
+  		background-color: $shark;
+  		margin: 0 auto;
+  		padding-left: 20px;
+  		width: 50%;
+  		position: relative;
+  		button{
+  			color: $tuna;
+  			background-color: $shark;
+  			border: solid 10px;
+  			display: block;
+  			border-radius: 50%;
+  			font-size: 20px;
+  			height: 60px;
+  			width: 60px;
+  			position: absolute;
+  			right: -30px;
+  			top: 50%;
+            margin-top: -30px;
+  			text-align: center;
+  			outline: 0;
+            padding: 0 !important;
+            line-height: 40px;
+  		}
+        .text-input-container{
+            color: $tuna;
+            width: 100%;
+            border-width: 1px;
+            padding: 20px 5px;
+            &:nth-of-type(1){
+                border-style: none none solid none;
+                border-width: 2px;
+            }
+            &:nth-of-type(2){
+                border-style: none;
+            }
+        }
+  		input{
+            border-radius: 0 !important;
+            -webkit-appearance: caret;
+            -moz-appearance: caret;
+            appearance: caret;
+            border-radius: 0 !important;
+            background-color: inherit !important;
+            display: block;
+            border-style: none;
+            width: 100%;
+            outline: 0;
+            font-size: 24px;
+            color: $tuna;
+            &::-webkit-input-placeholder{color: $tuna;}
+            &::-moz-placeholder {color: $tuna;}
+            &:-ms-input-placeholder {color: $tuna;}
+            &:-moz-placeholder {color: $tuna;}
+            &::input-placeholder{color: $tuna;}
+  		}
+  	}
+  	.no-account{
+  		color: $trout;
+  		margin-top: 20px;
+  		a{
+  			text-decoration: none;
+  			color: $pale-sky;
+  			&:hover{
+  				text-decoration: underline;
+  			}
+
+  		}
+  	}
+}
+input[alert=on]{
+  &::-webkit-input-placeholder{color: $tamarillo !important;}
+  &::-moz-placeholder{color: $tamarillo !important;}
+  &:-ms-input-placeholder{color: $tamarillo !important;}
+  &:-moz-placeholder{color: $tamarillo !important;}
+  &::input-placeholder{color: $tamarillo !important;}
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px){
+    .form{
+      width: 90%;
+      .input-container{
+        width: 80%;
+        input{
+        font-size: 18px;
+      }
+      }
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 599px){
+    .form{
+      width: 100%;
+      padding: 60px 5px;
+      margin: 50px 0 0 -12px;
+      .input-container{
+        width: 80%;
+        input{
+        font-size: 14px;
+      }
+      }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 449px){
+    .form{
+      width: 100%;
+      padding: 60px 5px;
+      margin: 50px 0 0 -5px;
+      .input-container{
+        width: 80%;
+        input{
+        font-size: 14px;
+      }
+      button{
+        height: 50px;
+        width: 50px;
+        right: -25px;
+        font-size: 12px;
+        margin-top: -25px;
+        line-height: 30px;
+      }
+      }
+    }
+}

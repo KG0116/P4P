@@ -1,0 +1,8 @@
+{
+	"home": 	["./public/javascripts/models/review.js", "./public/javascripts/carousel.js", "./public/javascripts/home.js"],
+	"cart": 	["./public/javascripts/cart.js"],
+	"checkout": ["./public/javascripts/checkout.js"],
+	"game": 	["./public/javascripts/models/review.js", "./public/javascripts/models/cart.js", "./public/javascripts/game.js"],
+	"games": 	["./public/javascripts/games.js"], 
+	"base": 	["./public/javascripts/jquery/jquery.js", "./public/javascripts/jquery.raty.js", "./public/javascripts/main.js"]
+}

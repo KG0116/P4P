@@ -1,0 +1,221 @@
+@import "colors";
+@import "mixins";
+@import "compass/reset";
+
+html, body{ 
+	height: 100%; 
+}
+body{
+	font-family: 'Roboto', sans-serif;
+	color: $dove-gray;
+	font-weight: normal;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+*, *:bofore, *:after{
+	box-sizing: border-box;
+}
+input, textarea, button{
+	outline: 0;
+	font-family: 'Roboto', sans-serif;
+	color: $dove-gray;
+	font-weight: 300;
+}
+
+.page-wrapper{
+	position: relative;
+	min-height: 100%;
+	margin-bottom: -51px;
+	&:after{
+		content: "";
+		display: block;
+		height: 51px;
+	}
+
+	.site-header{
+  		background-color: #34383D;
+  		text-align: center;
+  		height: 52px;
+  		padding: 0 20px;
+  		font-size: 24px;
+  		line-height: 52px;
+  		font-weight: 300;
+  		color: #fff;
+  		position: fixed;
+  		max-width: 100%;
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  		z-index: 100000;
+  		display: block;
+  		@include prefixes(transform, translate3d(0, 0, 0), webkit ms);
+  		.header-options{
+  			width: 100%;
+  			font-size: 0.01px;
+  			li{
+  				width: 33.33%;
+  				font-size: 20px;
+  				display: inline-block;
+  				*{
+  					display: inherit;
+  				}
+  				a{
+  					text-decoration: none;
+  					color: #fff;
+  				}
+  			}
+  			.bag{
+  				text-align: left;
+  				a{
+  					background-image: url("/images/white-bag.png");
+  					background-position: 1px 24px;
+  					height: 24px;
+  					width: 24px;
+  					display: block;
+            		text-decoration: none;
+            		position: absolute;
+            		top: 50%;
+            		@include prefixes(transform, translate3d(0, -50%, 0), webkit ms);
+  				}
+  			}
+  			.brand{
+  				text-align: center;
+  				a{
+  					letter-spacing: 2px;
+  				}
+  			}
+  			.menu{
+  				text-align: right;
+  				div{
+  					padding: 0 10px;
+  					cursor: pointer;
+  				}
+  			}
+  		}
+	}
+	.nav-container{
+		position: fixed;
+		top: 52px;
+		width: 100%;
+		z-index: 100000;
+		visibility: hidden;
+	}
+	.nav{
+		background-color: rgba($tuna, 0.9);
+		width: 30%;
+		position: relative;
+		display: block;
+		left: 50%;
+		margin-left: -15%;
+		outline: 1px solid transparent;
+		@include prefixes(transition, all 0.2s linear, webkit);
+		@include prefixes(backface-visibility, hidden, webkit);
+		@include prefixes(transform, perspective(50em) rotate3d(1, 0, 0, -90deg), webkit);
+		@include prefixes(transform-style, preserve-3d, webkit);
+		@include prefixes(transform-origin, 50% 0, webkit ms);
+		.nav-list{
+			li{
+				padding: 2% 0;
+				text-align: center;
+				a{
+					color: #fff;
+					text-decoration: none;
+					font-size: 20px;
+					font-weight: 300;
+					transition: color 0.3s;
+					&:hover{
+						color: darken(#fff, 20%);
+					}
+				}
+				&:not(:last-child){
+					border-bottom: solid 1px lighten($tuna, 15%);
+				}
+			}
+		}
+	}
+	.open{
+		@include prefixes(transform, perspective(50em) rotate3d(1, 0, 0, 0deg), webkit);
+  		@include prefixes(transform-style, preserve-3d, webkit);
+  		@include prefixes(transform-origin, 50% 0, webkit ms);
+  		visibility: visible;
+	}
+	.selected{
+		color: darken(#fff, 20%);
+	}
+	main{
+		display: block;
+		max-width: 1080px;
+		margin: 0 auto;
+		padding-top: 114px;
+	}
+}
+
+footer{
+	display: block;
+	height: 51px;
+	text-align: center;
+	line-height: 51px;
+}
+
+@media screen and (max-width: 1080px){
+	.page-wrapper main{
+			display: block;
+			max-width: 90%;
+			margin: 0 auto;
+			padding-top: 114px;
+	}
+}
+@media screen and (min-width: 1181px) and (max-width: 1710px){
+	.page-wrapper .nav{
+		width: 40%;
+		margin-left: -20%;
+	}
+}
+@media screen and (min-width: 829px) and (max-width: 1180px){
+	.page-wrapper .nav{
+		width: 50%;
+		margin-left: -25%;
+		.nav-list{
+			padding: 3% 0;
+		}
+	}
+}
+@media screen and (min-width: 619px) and (max-width: 828px){
+	.page-wrapper .nav{
+		width: 60%;
+		margin-left: -30%;
+		.nav-list{
+			padding: 3% 0;
+		}
+	}
+}
+@media screen and (min-width: 500px) and (max-width: 618px){
+	.page-wrapper .nav{
+		width: 70%;
+		margin-left: -35%;
+		.nav-list{
+			padding: 3% 0;
+		}
+	}
+}
+@media screen and (min-width: 380px) and (max-width: 499px){
+	.page-wrapper .nav{
+		width: 80%;
+		margin-left: -40%;
+		.nav-list{
+			padding: 3% 0;
+		}
+	}
+}
+@media screen and (min-width: 0px) and (max-width: 379px){
+	.page-wrapper .nav{
+		width: 100%;
+		left: 0;
+		right: 0;
+		margin: 0;
+		.nav-list{
+			padding: 3% 0;
+		}
+	}
+}

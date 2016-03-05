@@ -1,0 +1,10 @@
+{
+	"home": 	["./public/stylesheets/home.css"],
+	"cart": 	["./public/stylesheets/cart.css"],
+	"checkout": ["./public/stylesheets/checkout.css"],
+	"game": 	["./public/stylesheets/game.css"],
+	"games": 	["./public/stylesheets/games.css"], 
+	"login": 	["./public/stylesheets/login.css"],
+	"register":	["./public/stylesheets/account.css"],
+	"base": 	["./public/stylesheets/screen.css", "./public/stylesheets/base.css", "./public/stylesheets/jquery.raty.css", "./public/font-awesome.min.css"]
+}

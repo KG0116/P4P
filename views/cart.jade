@@ -1,0 +1,26 @@
+extends base
+block header
+	link(rel="stylesheet" type="text/css" href="/stylesheets/cart.css")
+block content 
+	main
+		h2(class="header") Shopping Cart
+		if items 
+			ul(class="cart")
+				each item, slug  in items
+					li(class="cart-item")
+						img(src="#{item.image}", alt="game")
+						div(class="cart-item-details")
+							div(class="title") #[a(href="/games/#{item.genre}/#{slug}") #{item.game}] 			
+							div(class="price") 
+								div(id="price", data-type="price", data-value="#{item.price}") #{item.price}
+								#[input(type="hidden", id="slug", data-type="slug", data-value="#{slug}")]
+								div(id="quantity" data-type="quantity", data-value="#{item.quantity}") Qty: #{item.quantity}
+								#[a(href="#", class="delete") Delete]
+				li(class="cart-item total", id="remove-me")
+					div(class="cart-item-details" id="total")
+						div(class="order-total", id="price") #{total}
+			a(href="/checkout", class="checkout") Proceed to checkout
+		else
+			p(class="empty-cart") Your shopping cart is empty
+block script
+	script(src="/javascripts/minified/cart.min.js")

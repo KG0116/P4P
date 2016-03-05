@@ -1,0 +1,16 @@
+extends base
+block header
+	link(rel="stylesheet" type="text/css" href="/stylesheets/register.css")
+block content
+	main
+		form(method="post", action="/register", class="form")
+			div(class="input-container")
+				button(type="submit") &#9658;
+				div(class="text-input-container")
+					input(type="text", id="username", name='username', placeholder="#{messages.username}", alert="#{alert.username}")
+				div(class="text-input-container")
+					input(type="text", id="email", name='email', placeholder="#{messages.email}", alert="#{alert.email}")
+				div(class="text-input-container")
+					input(type="password", id="password", name='password', placeholder="#{messages.password}", alert="#{alert.password}")
+				div(class="text-input-container")
+					input(type="password", id="password_confirmation", name='password_confirmation', placeholder="confirm your password*")

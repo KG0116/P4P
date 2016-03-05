@@ -1,0 +1,243 @@
+@import "base";
+
+a{
+	color: $lochmara;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.header{
+	font-size: 30px;
+	color: $dove-gray;
+}
+.empty-cart{
+	margin-top: 10px;
+}
+.cart{
+	margin-top: 20px;
+	.cart-item{
+		img{
+			height: 180px;
+			width: 120px;
+			vertical-align: top;
+		}
+		.cart-item-details{
+			display: inline-block;
+			margin-left: 10px;
+			width: 800px;
+			.title{
+				float: left;
+			}
+			.price{
+				float: right;
+				text-align: right;
+				line-height: 1.6em;
+				.delete{
+					display: block;
+				}
+			}
+			.update{
+				display: block;	
+				margin-top: 10px;
+			}
+		}
+		&:not(:last-child){
+			margin-bottom: 10px;
+			padding-bottom: 15px;
+			border-bottom: solid 1px $alto;
+		}
+	}
+	.total:before{
+		content: " ";
+		width: 120px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.order-total{
+		float: right;
+	}
+}
+.checkout{
+	padding: 12px 30px;
+	text-transform: uppercase;
+	background-color: $lochmara;
+	color: #fff;
+	&:hover{
+		text-decoration: none;
+	}
+}
+@media screen and (min-width: 812px) and (max-width: 1034px){
+	.cart .cart-item .cart-item-details{
+		width: 600px;
+	}
+}
+@media screen and (min-width: 589px) and (max-width: 811px){
+	.cart .cart-item .cart-item-details{
+		width: 400px;
+	}
+	.checkout{
+		border-radius: 3px;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 456px) and (max-width: 588px){
+	.cart .cart-item .cart-item-details{
+		width: 280px;
+	}
+	.checkout{
+		border-radius: 3px;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 353px) and (max-width: 455px){
+	.cart .cart-item .cart-item-details{
+		width: 180px;
+		.title{
+			font-size: 20px;
+		}
+		.price{
+			float: none;
+			clear: left;
+			text-align: left;
+			margin-top: 24px;
+		}
+	}
+	.checkout{
+		border-radius: 3px;
+		font-size: 14px;
+		padding: 18px 19px;
+		display: block;
+		max-width: 50%;
+		margin: 20px auto;
+		text-align: center;
+		font-weight: 700;
+	}
+	#total, #total .order-total {
+    	width: 100%;
+    	text-align: center;
+    	margin-left: 0;
+    	font-size: 20px;
+	}
+	#total .order-total:before{
+		content: "Total: ";
+	}
+
+}
+
+@media screen and (min-width: 345px) and (max-width: 352px){
+	.cart .cart-item .cart-item-details{
+		width: 180px;
+		.title{
+			font-size: 20px;
+		}
+		.price{
+			float: none;
+			clear: left;
+			text-align: left;
+			margin-top: 24px;
+		}
+	}
+	.checkout{
+		border-radius: 3px;
+		font-size: 14px;
+		padding: 18px 19px;
+		display: block;
+		max-width: 70%;
+		margin: 20px auto;
+		text-align: center;
+		font-weight: 700;
+	}
+	#total, #total .order-total {
+    	width: 100%;
+    	text-align: center;
+    	margin-left: 0;
+    	font-size: 20px;
+	}
+	#total .order-total:before{
+		content: "Total: ";
+	}
+
+}
+
+@media screen and (min-width: 289px) and (max-width: 344px){
+	.cart .cart-item .cart-item-details{
+		width: 130px;
+		.title{
+			font-size: 16px;
+		}
+		.price{
+			float: none;
+			clear: left;
+			text-align: left;
+			margin-top: 24px;
+		}
+	}
+	.checkout{
+		border-radius: 3px;
+		font-size: 14px;
+		padding: 18px 19px;
+		display: block;
+		max-width: 70%;
+		margin: 20px auto;
+		text-align: center;
+		font-weight: 700;
+	}
+	#total, #total .order-total {
+    	width: 100%;
+    	text-align: center;
+    	margin-left: 0;
+    	font-size: 20px;
+	}
+	#total .order-total:before{
+		content: "Total: ";
+	}
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 288px){
+	.header{
+		font-size: 26px;
+		text-align: center;
+	}
+	.cart-item{
+		text-align: center;
+	}
+	.cart .cart-item .cart-item-details{
+		width: 130px;
+		.title{
+			font-size: 16px;
+			margin-top: 10px;
+			float: none;
+		}
+		.price{
+			float: none;
+			clear: left;
+			text-align: center;
+			margin-top: 24px;
+		}
+	}
+	.checkout{
+		border-radius: 3px;
+		font-size: 14px;
+		padding: 18px 19px;
+		display: block;
+		max-width: 90%;
+		margin: 20px auto;
+		text-align: center;
+		font-weight: 700;
+	}
+	#total, #total .order-total {
+    	width: 100%;
+    	text-align: center;
+    	margin-left: 0;
+    	font-size: 20px;
+	}
+	#total .order-total:before{
+		content: "Total: ";
+	}
+
+}

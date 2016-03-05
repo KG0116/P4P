@@ -1,0 +1,15 @@
+
+extends base
+block header
+	link(rel="stylesheet" type="text/css" href="/stylesheets/games.css")
+block content
+	main
+		ul(class="games-list")
+			for game in games
+				li #[a(href="/games/#{game.genre}/#{game.slug}") #[img(src="/#{game.image_path}", alt="PS4Play", class="game-image")]]
+					div(class="game-details")
+						p(class="title") #[a(href="/games/#{game.genre}/#{game.slug}") #{game.name}]
+						p #[a(href="/games/#{game.genre}/#{game.slug}", id="price") #{game.price}]
+						div(class="stars", rating="#{game.rating}", review-count="#{game.review_count}")
+block script
+	script(src="/javascripts/minified/games.min.js")

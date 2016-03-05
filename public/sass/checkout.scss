@@ -1,0 +1,53 @@
+@import "base";
+
+main{
+	text-align: center;
+	.header{
+		font-size: 50px;
+		color: $dove-gray;
+	}
+	.text-box{
+		border-top: solid 1px $alto;
+		border-bottom: solid 1px $alto;
+		margin-top: 20px;
+		padding: 40px 0;
+		height: 200px;
+        .message{
+        	a{
+        		color: $lochmara;
+        	}
+        }
+        .total{
+        	margin-bottom: 100px;
+        }
+        .complete-order{
+			@include button($lochmara);
+			padding-top: 12px;
+			padding-bottom: 12px;
+			position: relative;
+		}
+		.loading:before{
+			content: "";
+			display: block;
+			position: absolute;
+			background-color: $lochmara;
+			background-image: url("/images/blue.gif");
+			background-size: 20% 50%;
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 472px){
+	main{
+		.header{
+			font-size: 30px;
+		}
+	}
+}

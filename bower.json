@@ -1,0 +1,13 @@
+{
+  "name": "PS4Play",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "normalize.css": "~3.0.3",
+    "jquery": "~2.1.4",
+    "jquery-raty": "~2.7.0",
+    "fontawesome": "~4.4.0",
+    "tooltipster": "~3.3.0",
+    "jquery.adaptive-backgrounds": "^1.0.3"
+  }
+}

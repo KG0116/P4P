@@ -1,0 +1,14 @@
+
+extends base
+block header
+	link(rel="stylesheet" type="text/css" href="/stylesheets/checkout.css")
+block content
+	main 
+		h2(class="header") Order Confirmation
+		div(class="text-box") 
+			p(class="message") Your order is ready to be placed.
+			br
+			p(class="total") Order total: #[span(id="price") #{total}]
+			div(class="complete-order") Complete Order
+block script
+	script(src="/javascripts/minified/checkout.min.js")
